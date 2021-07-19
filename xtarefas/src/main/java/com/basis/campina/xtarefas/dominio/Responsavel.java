@@ -1,5 +1,6 @@
 package com.basis.campina.xtarefas.dominio;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,18 +10,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "RESPONSAVEL")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class Responsavel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_RESPONSAVEL")
+    @SequenceGenerator(name = "SEQ_RESPONSAVEL", sequenceName = "SEQ_RESPONSAVEL", allocationSize = 1)
     private Integer id;
 
     @Column(name = "NOME")
