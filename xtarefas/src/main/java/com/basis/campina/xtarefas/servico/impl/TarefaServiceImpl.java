@@ -1,5 +1,6 @@
 package com.basis.campina.xtarefas.servico.impl;
 
+import com.basis.campina.xtarefas.dominio.Tarefa;
 import com.basis.campina.xtarefas.repositorio.TarefaRepository;
 import com.basis.campina.xtarefas.servico.TarefaService;
 import com.basis.campina.xtarefas.servico.dto.TarefaDTO;
