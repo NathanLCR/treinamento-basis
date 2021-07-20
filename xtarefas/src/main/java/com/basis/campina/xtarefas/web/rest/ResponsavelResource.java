@@ -28,14 +28,17 @@ public class ResponsavelResource {
     public ResponseEntity<List<ResponsavelDTO>> listar() {
         return ResponseEntity.ok(responsavelService.listar());
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<ResponsavelDTO> obterPorId(@PathVariable Integer id) {
         return ResponseEntity.ok(responsavelService.obterPorId(id));
     }
+
     @PostMapping
     public  ResponseEntity<ResponsavelDTO> salvar(@RequestBody ResponsavelDTO responsavelDTO) {
-        return new ResponseEntity<>(responsavelDTO, HttpStatus.CREATED);
+        return new ResponseEntity<>(responsavelService.salvar(responsavelDTO), HttpStatus.CREATED);
     }
+
     @PutMapping
     public  ResponseEntity<ResponsavelDTO> editar(@RequestBody ResponsavelDTO responsavelDTO) {
         return ResponseEntity.ok(responsavelService.editar(responsavelDTO));
