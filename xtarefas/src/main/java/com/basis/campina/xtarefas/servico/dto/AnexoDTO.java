@@ -16,4 +16,6 @@ public class AnexoDTO implements Serializable {
     private String file;
 
     private String fileName;
+
+    private Integer tarefa;
 }
