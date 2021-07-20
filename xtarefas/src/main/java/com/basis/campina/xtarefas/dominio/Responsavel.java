@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
@@ -20,9 +21,10 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Responsavel {
+public class Responsavel implements Serializable {
 
     @Id
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_RESPONSAVEL")
     @SequenceGenerator(name = "SEQ_RESPONSAVEL", sequenceName = "SEQ_RESPONSAVEL", allocationSize = 1)
     private Integer id;

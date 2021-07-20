@@ -13,7 +13,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet id="20210719180600-02" author="nathan.rocha">
+    <changeSet id="20210719193000-04" author="nathan.rocha">
         <createSequence sequenceName="SEQ_ANEXO" incrementBy="1" startValue="1"/>
     </changeSet>
 </databaseChangeLog>

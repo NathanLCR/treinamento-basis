@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "ANEXO")
@@ -19,9 +20,10 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Anexo {
+public class Anexo implements Serializable {
 
     @Id
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ANEXO")
     @SequenceGenerator(name = "SEQ_ANEXO", sequenceName = "SEQ_ANEXO", allocationSize = 1)
     private Integer id;
