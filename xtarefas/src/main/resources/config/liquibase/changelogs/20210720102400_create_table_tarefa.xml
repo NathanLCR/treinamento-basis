@@ -1,0 +1,35 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet id="20210720102400-05" author="nathan.rocha">
+        <createTable tableName="TAREFA">
+            <column name="ID" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NOME" type="varchar2(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="DATA_CONCLUSAO" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="DATA_INICIO" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="STATUS_COD" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ANEXO_ID" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RESPONSAVEL_ID" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="20210720102400-06" author="nathan.rocha">
+        <createSequence sequenceName="SEQ_TAREFA" incrementBy="1" startValue="1"/>
+    </changeSet>
+    <changeSet id="20210720102400-07" author="nathan.rocha">
+        <addForeignKeyConstraint baseColumnNames="ANEXO_ID" baseTableName="TAREFA" constraintName="TAREFA_ANEXO_PK" referencedColumnNames="ID" referencedTableName="ANEXO" />
+        <addForeignKeyConstraint baseColumnNames="RESPONSAVEL_ID" baseTableName="TAREFA" constraintName="TAREFA_RESPONSAVEL_PK" referencedColumnNames="ID" referencedTableName="RESPONSAVEL" />
+    </changeSet>
+</databaseChangeLog>
