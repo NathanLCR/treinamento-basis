@@ -5,7 +5,6 @@ import com.basis.campina.xtarefas.repositorio.ResponsavelRepository;
 import com.basis.campina.xtarefas.servico.ResponsavelService;
 import com.basis.campina.xtarefas.servico.dto.ResponsavelDTO;
 import com.basis.campina.xtarefas.servico.mapper.ResponsavelMapper;
-import com.basis.campina.xtarefas.util.ConstantesUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
