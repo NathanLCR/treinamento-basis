@@ -24,7 +24,5 @@ public class TarefaDTO implements Serializable {
 
     private EnumStatus status;
 
-    private Integer anexo;
-
     private Integer responsavel;
 }
